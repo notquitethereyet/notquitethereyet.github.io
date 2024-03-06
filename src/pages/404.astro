@@ -1,0 +1,46 @@
+---
+import Layout from "../layouts/Page.astro";
+import Link from "./Link.astro";
+const title = "404 Not Found";
+const description = "迷子？";
+const notFound = "Oops! That page was not found :(";
+const lost = "Either you're lost or you broke the matrix.";
+const goHome = "Click Kessoku Bwaando to get back home!";
+const koishiAlt = "Kessoky Bwaando going xD";
+---
+
+<Layout title={title} description={description}>
+  <section class="container">
+    <div class="error-page">
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <p>{notFound}</p>
+      <p>{lost}</p>
+      <a href="/" title={koishiAlt}>
+        <img src="https://cdn.discordapp.com/emojis/1201676001487376476.gif?size=128&quality=lossless" alt="You are lost" />
+      </a>
+      <p>{goHome}</p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .container {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .error-page {
+    margin-top: 20px;
+  }
+
+  .error-page h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .error-page p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+</style>

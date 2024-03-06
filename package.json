@@ -1,0 +1,50 @@
+{
+  "type": "module",
+  "name": "cute-site",
+  "version": "1.0.0",
+  "description": "My cute-site.",
+  "license": "zlib",
+  "author": "quiet69",
+  "homepage": "https://github.com/quiet69/quiet69.github.io",
+  "packageManager": "pnpm@8.9.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quiet69/quiet69.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/quiet69/quiet69.github.io/issues"
+  },
+  "engines": {
+    "node": ">=20.11.0",
+    "pnpm": ">=8.9.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.3.3",
+    "@astrojs/check": "^0.5.6",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@espimarisa/eslint-config": "^4.2.3",
+    "@fontsource/atkinson-hyperlegible": "^5.0.18",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "astro-compress": "^2.2.9",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "npm:eslint-plugin-i@2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-unicorn": "^51.0.1",
+    "modern-normalize": "^2.0.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "sass": "^1.70.0"
+  }
+}

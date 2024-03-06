@@ -1,0 +1,16 @@
+---
+interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
+  content?: string;
+  cssClass?: string;
+  title?: string;
+}
+
+const { href, title, content, cssClass } = Astro.props;
+---
+
+<a class={cssClass} href={href} rel="nofollow noopener noreferrer" title={title}>
+  {content}
+  <slot name="link-content" />
+</a>
+
+

@@ -1,0 +1,33 @@
+---
+import Head from "../components/Head.astro";
+
+import "@fontsource/atkinson-hyperlegible";
+import "modern-normalize";
+
+interface Props {
+  title?: string;
+  description?: string;
+  favicon?: URL;
+  url?: string;
+}
+
+const { description, title, url, favicon } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Imports head data -->
+  <Head title={title} description={description} favicon={favicon} url={url}>
+    <slot name="Head" />
+  </Head>
+
+  <!-- Begin content -->
+  <body>
+    <slot />
+
+    <!-- Global styles -->
+    <style lang="scss" is:global>
+      @use "../scss/base.scss";
+    </style>
+  </body>
+</html>
