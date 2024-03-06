@@ -36,15 +36,16 @@ const age = Math.abs(new Date(Date.now() - birthday.getTime()).getUTCFullYear() 
       <p>
       I am interested in everything tech. I love linux and virtualization (I use Arch with gpu pt to a windows vm :3). I am a big open-source/libre/FOSS enthusiast. I have been teaching myself Machine Learning and Artificial Intelligence. Expect to see some Neural Networks soon&trade;.
     </p>
+    <details>
+        <summary>My hyperfixations</summary>
+        <p>I spend my freetime playing video games, watching anime/ reading manga or playing the guitar! I also love building custom keyboards (oh so expensive!) and drawing.</p>
 
 
-      <p>I spend my freetime playing video games, watching anime/ reading manga or playing the guitar! I also love building custom keyboards (oh so expensive!) and drawing.</p>
-
-
-      <p>I'm a nerd who has spent hours trying to get better at my hobbies. My dream guitar is a Les Paul Standard 50s in Heritage Cherry Sunburst or a cream white Stratocaster (Japanese please!).
-        I have been looking into buying a vintage Greco or a Tokai Made in Japan guitar! </p>
-      <p> As for custom keyboards, I have owned Bakenekos, FreeBird TKL and others. I really wanna own a Geon F1-8x or a TGR Jane someday (very creative, ik). I build all my keyboards with broken-in and lubed Cherry MX Blacks on either an aluminum or polycarb plate (bet no one expected this). I currently type on a CableCarDesigns Angel built with Creampaca frankenswitches on a polypropylene plate and it bangs! </p>
-
+        <p>I'm a nerd who has spent hours trying to get better at my hobbies. My dream guitar is a Les Paul Standard 50s in Heritage Cherry Sunburst or a cream white Stratocaster (Japanese please!).
+          I have been looking into buying a vintage Greco or a Tokai Made in Japan guitar! </p>
+        <p> As for custom keyboards, I have owned Bakenekos, FreeBird TKL and others. I really wanna own a Geon F1-8x or a TGR Jane someday (very creative, ik). I build all my keyboards with broken-in and lubed Cherry MX Blacks on either an aluminum or polycarb plate (bet no one expected this). I currently type on a CableCarDesigns Angel built with Creampaca frankenswitches on a polypropylene plate and it bangs! </p>
+  
+    </details>
     </div>
 
     <Projects />
@@ -55,6 +56,10 @@ const age = Math.abs(new Date(Date.now() - birthday.getTime()).getUTCFullYear() 
 </Layout>
 
 <style lang="scss">
+    details summary:hover {
+  cursor: pointer; /* Change the cursor to a pointer */
+}
+
 #oneko {
         content: "";
         display: inline-block;
