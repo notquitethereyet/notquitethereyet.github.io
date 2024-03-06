@@ -141,10 +141,13 @@ footer {
 
 .webring {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); // Display in two columns with minimum width of 300px
+  grid-gap: 20px; // Add gap between grid items
   margin-top: 20px;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr; // Change to single column on smaller screens
+  }
 }
 
 .webring-link {
@@ -205,6 +208,9 @@ footer {
 
 // Tablet padding support
 @media only screen and (max-width: 950px) {
+  .webring-description {
+    height: 100%; // Decrease padding for smaller screens
+  }
   .container {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -232,9 +238,14 @@ footer {
 
 // Phone padding support
 @media only screen and (max-width: 600px) {
+  .webring-description {
+    height: 100%; // Decrease padding for smaller screens
+  }
+  
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
+    max-width: 100%; // Adjust the container width for smaller screens
   }
 
   #pronouns {
@@ -259,6 +270,9 @@ footer {
 
 // Small phone padding support
 @media (max-width: 382px) {
+  .webring-description {
+    height: 100%; // Decrease padding for smaller screens
+  }
   .container {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
