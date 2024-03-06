@@ -1,6 +1,6 @@
-# [espi.me][espi.me]
+# quiet69.github.io
 
-My personal website and portfolio, built with Astro.
+My cute and funny website, built with Astro.
 
 ## Usage
 
@@ -10,9 +10,3 @@ If you're trying to host this on GitHub pages, you'll probably want to stop and 
 2. `pnpm build`
 3. `pnpm preview` or `pnpm dev`
 
-## License
-
-[zlib/libpng][license]
-
-[license]: LICENSE.md "A hyperlink to the zlib [slash] libpng license"
-[espi.me]: https://espi.me "A hyperlink to espi [dot] me"
