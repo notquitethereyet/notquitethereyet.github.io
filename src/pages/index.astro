@@ -9,7 +9,7 @@ import Footer from "../components/Footer.astro";
 const title = "cutesite";
 const cutename = "quiet🌸"
 const description = "Hi, I am quiet!"
-const url = "https://quiet69.github.io";
+const url = "https://notquitethereyet.github.io";
 
 // Change in case of 🔥
 const pronouns = "any pronouns";
@@ -29,22 +29,29 @@ const age = Math.abs(new Date(Date.now() - birthday.getTime()).getUTCFullYear() 
 
     <div id="about" class="has-padding">
       <p class="title">About me</p>
-      <p>
-        Hi! I am a CS graduate student! I have 2 years experience as an software developer where i created webapps with Angular, Python, dotnet and Node.js APIs. I have also worked with SQL and Oracle Databases.
-      </p>
-
-      <p>
-      I am interested in everything tech. I love linux and virtualization (I use Arch with gpu pt to a windows vm :3). I am a big open-source/libre/FOSS enthusiast. I have been teaching myself Machine Learning and Artificial Intelligence. Expect to see some Neural Networks soon&trade;.
-    </p>
+      <ul>
+        <li><strong>Background</strong>: CS graduate student with 2 years of software development experience.</li>
+        <li><strong>Technical Skills</strong>: Angular, Python, C++, TypeScript, .NET, Node.js</li>
+        <li><strong>Current Work</strong>: Interning with a healthcare company utilising Make.com, Supabase with Postgres, and Google APIs for automation.</li>
+        <li><strong>Interests</strong>: Passionate about technology, Linux, and virtualization (I am big about VFIO gpu passthrough).</li>
+        <li><strong>Philosophy</strong>: Simp for open-source, libre, and FOSS.</li>
+        <li><strong>Learning Journey</strong>: Self-learning Deep Learning, with plans to explore Machine Learning deployment soon™.</li>
+      </ul>
     <details>
-        <summary>My hyperfixations</summary>
-        <p>I spend my freetime playing video games, watching anime/ reading manga or playing the guitar! I also love building custom keyboards (oh so expensive!) and drawing.</p>
+        <summary>My current hyperfixations:</summary>
+        <ol>
+            <li>Anime, Manga, Videogames, Sketching, Film/Vintage photography </li>
+            <li>City Pop, J-Rock</li>
+            <li> Fixing my broken Arch installation :P</li>
 
-
-        <p>I'm a nerd who has spent hours trying to get better at my hobbies. My dream guitar is a Les Paul Standard 50s in Heritage Cherry Sunburst or a cream white Stratocaster (Japanese please!).
-          I have been looking into buying a vintage Greco or a Tokai Made in Japan guitar! </p>
-        <p> As for custom keyboards, I have owned Bakenekos, FreeBird TKL and others. I really wanna own a Geon F1-8x or a TGR Jane someday (very creative, ik). I build all my keyboards with broken-in and lubed Cherry MX Blacks on either an aluminum or polycarb plate (bet no one expected this). I currently type on a CableCarDesigns Angel built with Creampaca frankenswitches on a polypropylene plate and it bangs! </p>
-  
+        <li>Japanese guitars</li>
+        </ol>
+        <p> As for custom keyboards, I have owned Bakenekos, FreeBird TKL and others. I build all my keyboards with broken-in and lubed Cherry MX Blacks on either an aluminum or polycarb plate (bet no one expected this).</p>
+            <ul>
+                <li>Kibou Fukuro: GMK Alter, alu top mount, lubed and spring swapped MX Blacks, TX Stabs. </li>
+                <li>Bachoo Crin: GMK Kouhai, polycarbonate top mount, lubed and spring swapped Zenclack Pleiades, TX Stabs</li>
+                <li>CableCarDesigns Angel: Creampacas, polypropylene pinhole mount, lubed and spring swapped creampacas,durock stabs!</li>
+            </ul>
     </details>
     </div>
 
@@ -54,6 +61,21 @@ const age = Math.abs(new Date(Date.now() - birthday.getTime()).getUTCFullYear() 
 
   <Footer />
 </Layout>
+
+<script>
+  const oneko = document.getElementById('oneko');
+  const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const currentTheme = localStorage.getItem('theme') || (prefersDarkMode ? 'dark' : 'light');
+  
+  document.documentElement.setAttribute('data-theme', currentTheme);
+
+  oneko.addEventListener('click', () => {
+    let theme = document.documentElement.getAttribute('data-theme');
+    theme = (theme === 'light') ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  });
+</script>
 
 <style lang="scss">
     details summary:hover {
@@ -69,7 +91,6 @@ const age = Math.abs(new Date(Date.now() - birthday.getTime()).getUTCFullYear() 
         right: 2rem;
         top: 1.3rem;
         image-rendering: pixelated;
-        /* https://raw.githubusercontent.com/adryd325/oneko.js/14bab15a755d0e35cd4ae19c931d96d306f99f42/oneko.gif */
         background-image: url("/webring/oneko.gif");
         animation: sleep 1s infinite;
         cursor: pointer;

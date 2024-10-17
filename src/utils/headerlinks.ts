@@ -7,8 +7,8 @@ interface HeaderLink {
 export const headerLinks = [
   {
     name: "GitHub",
-    link: "https://github.com/quiet69",
-    altText: "A link to my GitHub profile, (at) quiet69.",
+    link: "https://github.com/notquitethereyet",
+    altText: "A link to my GitHub profile, (at) notquitethereyet.",
   },
   {
     name: "Discord",

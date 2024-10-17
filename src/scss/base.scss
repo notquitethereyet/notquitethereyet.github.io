@@ -16,9 +16,56 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+// Light Mode Styles
+html[data-theme='light'] {
+  body {
+    color: $dark;
+    background-color: $light;
+  }
+
+  a {
+    color: $primary;
+  }
+
+  footer {
+    background-color: $grey;
+  }
+}
+
+// Dark Mode Styles
+html[data-theme='dark'] {
+  body {
+    color: $light;
+    background-color: $dark;
+
+    @media (prefers-contrast: more) {
+      color: $white;
+      background-color: $black;
+
+      footer {
+        background-color: $dark;
+      }
+    }
+  }
+
+  a {
+    color: $secondary;
+  }
+
+  footer {
+    background-color: $black;
+  }
+
+  #name {
+    text-shadow: 0 0 0.25rem $secondary;
+  }
+
+  .title {
+    text-decoration: $primary 1px solid underline;
+  }
+}
+
 body {
-  color: $dark;
-  background-color: $light;
   min-height: 100vh;
   height: 100vh;
   width: 100wh;
@@ -43,7 +90,6 @@ body {
 //////////////////////
 
 a {
-  color: $primary;
   text-decoration: none;
 
   &:hover {
@@ -70,7 +116,6 @@ footer {
   text-align: center;
   padding: 1rem;
   margin-top: auto;
-  background-color: $grey;
 }
 
 .container {
@@ -135,10 +180,6 @@ footer {
   }
 }
 
-// #webring {
-//   max-width: 25rem;
-// }
-
 .webring {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); // Display in two columns with minimum width of 300px
@@ -153,14 +194,13 @@ footer {
 .webring-link {
   text-decoration: none;
   color: inherit;
-  }
+}
 
 .webring-description {
   padding: 20px;
   border: 1px solid #ff829f;
   border-radius: 8px;
   transition: transform 0.3s ease;
-  // overflow: auto; /* Ensure overflow content is hidden */
   height: 120px;
 }
 
@@ -177,10 +217,6 @@ footer {
 .webring-text {
   margin: 0;
   font-size: 1rem;
-}
-
-.webring-image {
-  image-rendering: pixelated;
 }
 
 .project {
