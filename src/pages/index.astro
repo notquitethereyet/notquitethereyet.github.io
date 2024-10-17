@@ -15,9 +15,9 @@ const url = "https://notquitethereyet.github.io";
 const pronouns = "any pronouns";
 
 // Calculates my age because I don't want to do it manually
-const birthday = new Date("04/05/2000");
+// const birthday = new Date("04/05/2000");
 const favicon = new URL("/favicon.png", Astro.url);
-const age = Math.abs(new Date(Date.now() - birthday.getTime()).getUTCFullYear() - 1970);
+// const age = Math.abs(new Date(Date.now() - birthday.getTime()).getUTCFullYear() - 1970);
 ---
 
 <Layout title={title} description={description} favicon={favicon} url={url}>
@@ -64,12 +64,20 @@ const age = Math.abs(new Date(Date.now() - birthday.getTime()).getUTCFullYear() 
 
 <script>
   const oneko = document.getElementById('oneko');
+if (oneko) {
+    oneko.addEventListener('click', () => {
+        // Your click handling code
+    });
+} else {
+    console.error("Element with ID 'oneko' not found.");
+}
+
   const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const currentTheme = localStorage.getItem('theme') || (prefersDarkMode ? 'dark' : 'light');
   
   document.documentElement.setAttribute('data-theme', currentTheme);
 
-  oneko.addEventListener('click', () => {
+  oneko?.addEventListener('click', () => {
     let theme = document.documentElement.getAttribute('data-theme');
     theme = (theme === 'light') ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', theme);
