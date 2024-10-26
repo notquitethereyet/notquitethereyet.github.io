@@ -7,7 +7,7 @@ import Footer from "../components/Footer.astro";
 
 // Metadata
 const title = "cutesite";
-const cutename = "quiet🌸"
+const cutename = "quiet"
 const description = "Hi, I am quiet!"
 const url = "https://notquitethereyet.github.io";
 
@@ -22,21 +22,36 @@ const favicon = new URL("/favicon.png", Astro.url);
 
 <Layout title={title} description={description} favicon={favicon} url={url}>
   <section class="container">
-    <h1 id="name">{cutename}</h1>
+    <h1 id="name">{cutename}<a href="#" class="emoji-link" id="emoji">🌸</a></h1>
+    <div id="toast" class="toast" style="display: none;">you are cute!</div>
     <span id="pronouns">({pronouns})</span>
     <div id="oneko" aria-hidden="true"></div>
     <HeaderLinks />
 
     <div id="about" class="has-padding">
       <p class="title">About me</p>
-      <ul>
-        <li><strong>Background</strong>: CS graduate student with 2 years of software development experience.</li>
-        <li><strong>Technical Skills</strong>: Angular, Python, C++, TypeScript, .NET, Node.js</li>
-        <li><strong>Current Work</strong>: Interning with a healthcare company utilising Make.com, Supabase with Postgres, and Google APIs for automation.</li>
-        <li><strong>Interests</strong>: Passionate about technology, Linux, and virtualization (I am big about VFIO gpu passthrough).</li>
-        <li><strong>Philosophy</strong>: Simp for open-source, libre, and FOSS.</li>
-        <li><strong>Learning Journey</strong>: Self-learning Deep Learning, with plans to explore Machine Learning deployment soon™.</li>
-      </ul>
+<div class="about-cards">
+    <div class="about-card">
+        <strong>Background</strong>: CS graduate student with 2 years of software development experience.
+    </div>
+    <div class="about-card">
+        <strong>Technical Skills</strong>: Angular, Python, C++, TypeScript, .NET, Node.js
+    </div>
+    <div class="about-card">
+        <strong>Current Work</strong>: Interning with a healthcare company utilizing Make.com, Supabase with Postgres, and Google APIs for automation.
+    </div>
+    <div class="about-card">
+        <strong>Interests</strong>: Passionate about technology, Linux, and virtualization (I am big about VFIO gpu passthrough).
+    </div>
+    <div class="about-card">
+        <strong>Philosophy</strong>: Simp for open-source, libre, and FOSS.
+    </div>
+    <div class="about-card">
+        <strong>Learning Journey</strong>: Self-learning Deep Learning, with plans to explore Machine Learning deployment soon™.
+    </div>
+</div>
+
+
     <details>
         <summary>My current hyperfixations:</summary>
         <ol>
@@ -47,11 +62,19 @@ const favicon = new URL("/favicon.png", Astro.url);
         <li>Japanese guitars</li>
         </ol>
         <p> As for custom keyboards, I have owned Bakenekos, FreeBird TKL and others. I build all my keyboards with broken-in and lubed Cherry MX Blacks on either an aluminum or polycarb plate (bet no one expected this).</p>
-            <ul>
-                <li>Kibou Fukuro: GMK Alter, alu top mount, lubed and spring swapped MX Blacks, TX Stabs. </li>
-                <li>Bachoo Crin: GMK Kouhai, polycarbonate top mount, lubed and spring swapped Zenclack Pleiades, TX Stabs</li>
-                <li>CableCarDesigns Angel: Creampacas, polypropylene pinhole mount, lubed and spring swapped creampacas,durock stabs!</li>
-            </ul>
+<div class="keyboard-cards">
+    <div class="keyboard-card">
+        <strong><a href="https://kiboustore.notion.site/Fukuro-Group-Buy-Information-c6bc51f97b834b9e813a83de4619eb90" target="_blank" rel="noopener noreferrer">Kibou Fukuro</a>:</strong> GMK Alter, alu top mount, lubed and spring swapped MX Blacks, TX Stabs.
+    </div>
+    <div class="keyboard-card">
+        <strong><a href="https://cannonkeys.com/products/gb-crin-keyboard" target="_blank" rel="noopener noreferrer">Bachoo Crin</a>:</strong> GMK Kouhai, polycarbonate top mount, lubed and spring swapped Zenclack Pleiades, TX Stabs.
+    </div>
+    <div class="keyboard-card">
+        <strong><a href="https://cannonkeys.com/products/angel-keyboard" target="_blank" rel="noopener noreferrer">CableCarDesigns Angel</a>:</strong> Creampacas, polypropylene pinhole mount, lubed and spring swapped creampacas, Durock stabs!
+    </div>
+</div>
+
+
     </details>
     </div>
 
@@ -64,13 +87,6 @@ const favicon = new URL("/favicon.png", Astro.url);
 
 <script>
   const oneko = document.getElementById('oneko');
-if (oneko) {
-    oneko.addEventListener('click', () => {
-        // Your click handling code
-    });
-} else {
-    console.error("Element with ID 'oneko' not found.");
-}
 
   const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const currentTheme = localStorage.getItem('theme') || (prefersDarkMode ? 'dark' : 'light');
@@ -83,6 +99,31 @@ if (oneko) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   });
+
+
+  const emojiLink = document.getElementById('emoji');
+  const toast = document.getElementById('toast');
+
+  // Show toast notification function
+  function showToast() {
+    if (toast) {
+    toast.style.display = 'block';
+    setTimeout(() => {
+        if (toast) { // Check again before hiding
+            toast.style.display = 'none';
+        }
+    }, 3000); // Hide after 3 seconds
+}
+
+  }
+
+  // Click event for emoji
+  emojiLink?.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent the default anchor behavior
+    showToast(); // Show the toast notification
+  });
+
+
 </script>
 
 <style lang="scss">
